@@ -1,6 +1,6 @@
 package entities;
 
-public abstract class Pessoa {
+public class Pessoa {
 	protected String nome;
 	protected Telefone telefone;
 	protected Endereco endereco;
@@ -38,11 +38,8 @@ public abstract class Pessoa {
 	}
 	
 	//Methods
-	public abstract void realizarCadastro();
-	
-	public abstract void visualizarCadastro();
-	
-	public abstract void atualizarCadastro();
-	
-	public abstract void deletarCadastro();
+	//public abstract void realizarCadastro();
+	//public abstract void visualizarCadastro();
+	//public abstract void atualizarCadastro();	
+	//public abstract void deletarCadastro();
 }

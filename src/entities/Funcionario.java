@@ -62,19 +62,15 @@ public class Funcionario extends Pessoa{
 	}
 	
 	//Methods
-	@Override
 	public void realizarCadastro() {
 	}
 	
-	@Override
 	public void visualizarCadastro() {
 	}
 	
-	@Override
 	public void atualizarCadastro() {
 	}
 	
-	@Override
 	public void deletarCadastro() {
 	}
 }
