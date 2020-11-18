@@ -2,6 +2,7 @@ package entities;
 
 //Imports
 import enums.StatusFuncionario;
+import java.util.ArrayList;
 import enums.NivelDeAcesso;
 
 public class Funcionario extends Pessoa{
@@ -12,7 +13,9 @@ public class Funcionario extends Pessoa{
 	private String login;
 	private String senha;
 	
-	//Constructors
+	private static ArrayList<Funcionario> dadosFuncionarios = new ArrayList<Funcionario>();
+	
+	//Constructors	
 	public Funcionario(String nome, Telefone telefone, Endereco endereco,  int id_Funcionario, String cargo, StatusFuncionario status, NivelDeAcesso nivelDeAcesso, String login, String senha) {
 		super(nome, telefone, endereco);
 		this.id_Funcionario = id_Funcionario;
@@ -22,7 +25,7 @@ public class Funcionario extends Pessoa{
 		this.login = login;
 		this.senha = senha;
 	}
-	
+
 	//Gets and Sets
 	public int getId_Funcionario() {
 		return id_Funcionario;
@@ -62,10 +65,12 @@ public class Funcionario extends Pessoa{
 	}
 	
 	//Methods
-	public void realizarCadastro() {
+	public void realizarCadastro(Funcionario funcionario) {
+		dadosFuncionarios.add(funcionario);
 	}
 	
 	public void visualizarCadastro() {
+		//for()
 	}
 	
 	public void atualizarCadastro() {

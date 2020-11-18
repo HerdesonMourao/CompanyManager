@@ -1,13 +1,13 @@
 package test;
 
 import java.util.Scanner;
+import entities.*;
+import enums.StatusFuncionario;
+import enums.NivelDeAcesso;
 
 public class ProgramTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hello world!");
-		
 		Scanner teclado = new Scanner(System.in);
 		
 		//Menu Option
@@ -25,12 +25,89 @@ public class ProgramTest {
 			case 1:
 				System.out.println("=== Qual cadastro deseja fazer ===");
 				System.out.println("1) Funcionario");
+				System.out.println("Digite sua opção: ");
+				int option2 = teclado.nextInt();
 			
+				switch(option2) {
+					case 1:
+						System.out.println("=== Cadastro de Funcionario ===");
+						
+						System.out.println("Id: ");
+						int id = teclado.nextInt();
+						
+						System.out.println("Nome: ");
+						String nome = teclado.next();
+						
+						System.out.println("=== Telefone ===");
+						System.out.println("DDD: ");
+						String ddd = teclado.next();
+						System.out.println("Numero: ");
+						String numeroTelefone = teclado.next();
+						
+						Telefone telefone = new Telefone(ddd, numeroTelefone);
+						
+						System.out.println("=== Endereco ===");
+						System.out.println("Logradouro: ");
+						String logradouro = teclado.next();
+						System.out.println("Numero: ");
+						String numero = teclado.next();
+						System.out.println("Complemento: ");
+						String complemento = teclado.next();
+						System.out.println("Bairro: ");
+						String bairro = teclado.next();
+						System.out.println("Cidade: ");
+						String cidade = teclado.next();
+						System.out.println("CEP: ");
+						String cep = teclado.next();
+						System.out.println("UF: ");
+						String unidadeFederativa = teclado.next();
+						
+						Endereco endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, cep, unidadeFederativa);
+						
+						System.out.println("Cargo: ");
+						String cargo = teclado.next();
+						
+						System.out.println("=== Status ===");
+						System.out.println("1 - VINCULADO");
+						System.out.println("2 - DESVINCULADO");
+						System.out.println("Digite o status do funcionario: ");
+						StatusFuncionario status = teclado.;
+						if(op == 1) {
+							status = StatusFuncionario.valueOf("VINCULADO");
+						} else {
+							status = StatusFuncionario.DESVINCULADO.toString();
+						}
+						
+						System.out.println("Nivel de acesso: ");
+						String nivelDeAcesso = teclado.next();
+						
+						System.out.println("Login: ");
+						String login = teclado.next();
+						
+						System.out.println("Senha: ");
+						String senha = teclado.next();
+						
+						Funcionario funcionario = new Funcionario(nome, telefone, endereco, id, cargo, status, nivelDeAcesso, login, senha);
+						break;
+				}
+				
+				break;
+			
+			case 2:
+				break;
+				
+			case 3:
+				break;
+				
+			case 4:
+				break;
+			
+			case 5:
+				break;
+				
+			case 0:
 				break;
 		}
-		//Created Funcionario
-		System.out.println("=== Cradastrar Funcionario ===");
-		
 		
 		//Finish keyboard.
 		teclado.close();
