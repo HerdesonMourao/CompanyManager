@@ -71,15 +71,31 @@ public class ProgramTest {
 						System.out.println("1 - VINCULADO");
 						System.out.println("2 - DESVINCULADO");
 						System.out.println("Digite o status do funcionario: ");
-						StatusFuncionario status = teclado.;
+						int op = teclado.nextInt();
+						
+						StatusFuncionario status;
+								
 						if(op == 1) {
-							status = StatusFuncionario.valueOf("VINCULADO");
+							status = StatusFuncionario.VINCULADO;
 						} else {
-							status = StatusFuncionario.DESVINCULADO.toString();
+							status = StatusFuncionario.DESVINCULADO;
 						}
 						
-						System.out.println("Nivel de acesso: ");
-						String nivelDeAcesso = teclado.next();
+						System.out.println("=== Nivel de acesso ===");
+						System.out.println("1 - SIMPLES");
+						System.out.println("2 - GERENCIA");
+						System.out.println("3 - PROPRIETARIO");
+						System.out.println("Digite o nivel de acesso do funcionario: ");	
+						int op2 = teclado.nextInt();
+						
+						NivelDeAcesso nivelDeAcesso;
+						if(op2 == 1) {
+							nivelDeAcesso = NivelDeAcesso.SIMPLES;
+						} else if(op2 == 2) {
+							nivelDeAcesso = NivelDeAcesso.GERENCIA;
+						} else {
+							nivelDeAcesso = NivelDeAcesso.PROPRIETARIO;
+						}
 						
 						System.out.println("Login: ");
 						String login = teclado.next();
@@ -88,6 +104,9 @@ public class ProgramTest {
 						String senha = teclado.next();
 						
 						Funcionario funcionario = new Funcionario(nome, telefone, endereco, id, cargo, status, nivelDeAcesso, login, senha);
+						
+						funcionario.realizarCadastro(funcionario);
+						
 						break;
 				}
 				
