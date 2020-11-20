@@ -70,7 +70,9 @@ public class Funcionario extends Pessoa{
 	}
 	
 	public void visualizarCadastro() {
-		//for()
+		for(Funcionario funcionario: dadosFuncionarios) {
+			funcionario.toString();
+		}
 	}
 	
 	public void atualizarCadastro() {
@@ -78,4 +80,20 @@ public class Funcionario extends Pessoa{
 	
 	public void deletarCadastro() {
 	}
+
+	@Override
+	public String toString() {
+		return "Funcionario [Id Funcionario= " + getId_Funcionario() 
+				+ ", Nome= " + getNome()
+				+ ", Telefone= " + getTelefone().toString()
+				+ ", Endereco= " + getEndereco().toString()
+				+ ", Cargo= " + getCargo()
+				+ ", Status= " + getStatus()
+				+ ", Nivel de acesso= " + getNivelDeAcesso() 
+				+ ", Login=" + getLogin()
+				+ ", Senha= " + getSenha()
+				+ "]";
+	}
+	
+	
 }
