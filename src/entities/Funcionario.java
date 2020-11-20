@@ -78,9 +78,11 @@ public class Funcionario extends Pessoa{
 	}
 	
 	public void atualizarCadastro() {
+		
 	}
 	
 	public void deletarCadastro() {
+		
 	}
 
 	@Override
@@ -95,7 +97,5 @@ public class Funcionario extends Pessoa{
 				+ ", Login=" + getLogin()
 				+ ", Senha= " + getSenha()
 				+ "]";
-	}
-	
-	
+	}	
 }
