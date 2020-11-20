@@ -15,7 +15,7 @@ public class Funcionario extends Pessoa{
 	
 	private static ArrayList<Funcionario> dadosFuncionarios = new ArrayList<Funcionario>();
 	
-	//Constructors	
+	//Constructors		
 	public Funcionario(String nome, Telefone telefone, Endereco endereco,  int id_Funcionario, String cargo, StatusFuncionario status, NivelDeAcesso nivelDeAcesso, String login, String senha) {
 		super(nome, telefone, endereco);
 		this.id_Funcionario = id_Funcionario;
@@ -24,6 +24,10 @@ public class Funcionario extends Pessoa{
 		this.nivelDeAcesso = nivelDeAcesso;
 		this.login = login;
 		this.senha = senha;
+	}
+
+	public Funcionario(String nome, Telefone telefone, Endereco endereco) {
+		super(nome, telefone, endereco);
 	}
 
 	//Gets and Sets
@@ -70,8 +74,8 @@ public class Funcionario extends Pessoa{
 	}
 	
 	public void visualizarCadastro() {
-		for(Funcionario funcionario: dadosFuncionarios) {
-			funcionario.toString();
+		for(Funcionario fun: dadosFuncionarios) {
+			System.out.println(fun.toString());
 		}
 	}
 	

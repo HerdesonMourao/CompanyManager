@@ -30,6 +30,6 @@ public class Telefone {
 	//Methods
 	@Override
 	public String toString() {
-		return this.getDdd() + " " + this.getNumero();
+		return "(" + this.getDdd() + ") " + this.getNumero();
 	}
 }
