@@ -51,8 +51,10 @@ public class ItemNotaFiscal {
 	//Methods
 	@Override
 	public String toString() {
-		return "ItemNotaFiscal [getCodigoProduto()=" + getCodigoProduto() + ", getDescricaoItem()=" + getDescricaoItem()
-				+ ", getQuantidade()=" + getQuantidade() + ", getValorUnidade()=" + getValorUnidade()
-				+ ", getValorTotal()=" + getValorTotal() + "]";
+		return "ItemNotaFiscal [Codigo produto= " + getCodigoProduto()
+				+ ", Descricao do item= " + getDescricaoItem()
+				+ ", Quantidade= " + getQuantidade()
+				+ ", Valor unitario= " + getValorUnidade()
+				+ ", Valor total= " + getValorTotal() + "]";
 	}
 }

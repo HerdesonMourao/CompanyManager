@@ -31,12 +31,16 @@ public class ProgramTest {
 				case 1:
 					System.out.println("=== Qual cadastro deseja fazer ===");
 					System.out.println("1) Funcionario");
+					System.out.println("2) Cliente");
+					System.out.println("3) Fornecedor");
+					System.out.println("4) Item em estoque");
+					System.out.println("5) Nota fiscal");
 					System.out.println("Digite sua opção: ");
 					int option2 = teclado.nextInt();
 				
 					if(option2 == 1) {
 						System.out.println("=== Cadastro de Funcionario ===");
-							
+						
 						System.out.println("Id: ");
 						int id = teclado.nextInt();
 							
@@ -119,7 +123,18 @@ public class ProgramTest {
 							System.out.println("");
 						}catch (Exception e) {
 							System.out.println(e);
-						}	
+						}
+						
+					}else if(option2 == 2) {
+						
+					}else if(option2 == 3) {
+						
+					}else if(option2 == 4) {
+						
+					}else if(option2 == 5) {
+						
+					}else {
+						System.out.println("Opção digita inválida");
 					}
 					
 					break;
@@ -128,10 +143,35 @@ public class ProgramTest {
 					break;
 					
 				case 3:
-					try {
-						funcionario.visualizarCadastro();
-					}catch (Exception e) {
-						System.out.println(e);
+					System.out.println("=== Qual cadastro deseja visualizar ===");
+					System.out.println("1) Funcionario");
+					System.out.println("2) Cliente");
+					System.out.println("3) Fornecedor");
+					System.out.println("4) Item em estoque");
+					System.out.println("5) Nota fiscal");
+					System.out.println("Digite sua opção: ");
+					int option3 = teclado.nextInt();
+					
+					if(option3 == 1) {
+						System.out.println("Qual funcionario deseja visualizar, digite o id do mesmo: ");
+						int idDesejado = teclado.nextInt();
+						
+						try {
+							funcionario.visualizarCadastro(idDesejado);
+						}catch (Exception e) {
+							System.out.println(e);
+						}
+						
+					}else if(option3 == 2) {
+						
+					}else if(option3 == 3) {
+						
+					}else if(option3 == 4) {
+						
+					}else if(option3 == 5) {
+						
+					}else {
+						System.out.println("Opção digita inválida");
 					}
 					
 					break;
