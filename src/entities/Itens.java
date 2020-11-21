@@ -1,5 +1,6 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import enums.StatusItem;
 
@@ -11,6 +12,8 @@ public class Itens {
 	private Fornecedor fornecedor;
 	private GregorianCalendar dataDeEntrada;
 	private StatusItem statusItem;
+	
+	private static ArrayList<Itens> dadosItens = new ArrayList<Itens>();
 	
 	//Constructors
 	public Itens(int id_Item, String nome, String classificacao, double valor, Fornecedor fornecedor, GregorianCalendar dataDeEntrada, StatusItem statusItem) {
@@ -68,24 +71,38 @@ public class Itens {
 	}
 	
 	//Methods
-	public void realizarCadastro(Fornecedor fornecedor) {
-			
+	public void realizarCadastro(Itens itens) {
+		dadosItens.add(itens);
 	}
 		
 	public void visualizarCadastro(int idDesejado) {
-		
+		for(Itens item : dadosItens) {
+			if(item.getId_Item() == idDesejado) {
+				System.out.println(item.toString());
+			}
+		}
 	}
 		
-	public void atualizarCadastro() {
-			
+	public void atualizarCadastro(Itens itens) {
+		for (Itens item : dadosItens) {
+			if (item.getId_Item() == itens.getId_Item()) {
+				dadosItens.set(dadosItens.indexOf(item), itens);
+			}
+		}
 	}
 	
-	public void deletarCadastro() {
-			
+	public void deletarCadastro(int id) {
+		for (Itens itens : dadosItens) {
+            if (itens.getId_Item() == id) {
+                dadosItens.remove(itens);
+            }
+        }
 	}
 	
 	public void gerarRelatorioDeEstoque() {
-		
+		for(Itens itens : dadosItens) {
+			System.out.println(itens.getNome());
+		}
 	}
 
 	@Override
