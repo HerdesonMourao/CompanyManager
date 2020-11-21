@@ -49,23 +49,37 @@ public class Cliente extends Pessoa {
 	
 	//Methods
 	public void realizarCadastro(Cliente cliente) {
-		
+		dadosClientes.add(cliente);
 	}
 	
 	public void visualizarCadastro(int idDesejado) {
-	
+		for(Cliente cli : dadosClientes) {
+			if(cli.getId_Cliente() == idDesejado) {
+				System.out.println(cli.toString());
+			}
+		}
 	}
 	
-	public void atualizarCadastro() {
-		
+	public void atualizarCadastro(Cliente cliente) {
+		for (Cliente cli : dadosClientes) {
+			if (cli.getId_Cliente() == cliente.getId_Cliente()) {
+				dadosClientes.set(dadosClientes.indexOf(cli), cliente);
+			}
+		}
 	}
 	
-	public void deletarCadastro() {
-		
+	public void deletarCadastro(int id) {
+		for (Cliente cliente : dadosClientes) {
+            if (cliente.getId_Cliente() == id) {
+                dadosClientes.remove(cliente);
+            }
+        }
 	}
 	
 	public void gerarRelatorioDeDividas() {
-		
+		for(Cliente cliente : dadosClientes) {
+			System.out.println(cliente.getDivida());
+		}
 	}
 	
 	@Override

@@ -34,23 +34,6 @@ public class Divida {
 	public void setStatusDivida(StatusDivida statusDivida) {
 		this.statusDivida = statusDivida;
 	}
-
-	//Methods
-	public void realizarCadastro(Fornecedor fornecedor) {
-			
-	}
-		
-	public void visualizarCadastro(int idDesejado) {
-		
-	}
-		
-	public void atualizarCadastro() {
-			
-	}
-		
-	public void deletarCadastro() {
-			
-	}
 		
 	@Override
 	public String toString() {

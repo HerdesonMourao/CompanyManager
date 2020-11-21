@@ -1,14 +1,18 @@
 package entities;
 
+import java.util.ArrayList;
+
 public class ItemNotaFiscal {
-	private String codigoProduto;
+	private int codigoProduto;
 	private String descricaoItem;
 	private int quantidade;
 	private double valorUnidade;
 	private double valorTotal;
 	
+	private static ArrayList<ItemNotaFiscal> dadosNotaFiscal = new ArrayList<ItemNotaFiscal>();
+	
 	//Constructs
-	public ItemNotaFiscal(String codigoProduto, String descricaoItem, int quantidade, double valorUnidade, double valorTotal) {
+	public ItemNotaFiscal(int codigoProduto, String descricaoItem, int quantidade, double valorUnidade, double valorTotal) {
 		this.codigoProduto = codigoProduto;
 		this.descricaoItem = descricaoItem;
 		this.quantidade = quantidade;
@@ -17,10 +21,10 @@ public class ItemNotaFiscal {
 	}
 	
 	//Gets and sets
-	public String getCodigoProduto() {
+	public int getCodigoProduto() {
 		return codigoProduto;
 	}
-	public void setCodigoProduto(String codigoProduto) {
+	public void setCodigoProduto(int codigoProduto) {
 		this.codigoProduto = codigoProduto;
 	}
 	public String getDescricaoItem() {
@@ -49,20 +53,32 @@ public class ItemNotaFiscal {
 	}
 
 	//Methods
-	public void realizarCadastro(Fornecedor fornecedor) {
-			
+	public void realizarCadastro(ItemNotaFiscal itemNotaFiscal) {
+		dadosNotaFiscal.add(itemNotaFiscal);
 	}
 		
 	public void visualizarCadastro(int idDesejado) {
-		
+		for(ItemNotaFiscal nota : dadosNotaFiscal) {
+			if(nota.getCodigoProduto() == idDesejado) {
+				System.out.println(nota.toString());
+			}
+		}
 	}
 		
-	public void atualizarCadastro() {
-			
+	public void atualizarCadastro(ItemNotaFiscal itemNotaFiscal) {
+		for (ItemNotaFiscal nota : dadosNotaFiscal) {
+			if (nota.getCodigoProduto() == itemNotaFiscal.getCodigoProduto()) {
+				dadosNotaFiscal.set(dadosNotaFiscal.indexOf(nota), itemNotaFiscal);
+			}
+		}
 	}
 		
-	public void deletarCadastro() {
-			
+	public void deletarCadastro(int id) {
+		for (ItemNotaFiscal nota : dadosNotaFiscal) {
+            if (nota.getCodigoProduto() == id) {
+                dadosNotaFiscal.remove(nota);
+            }
+        }
 	}
 		
 	@Override
