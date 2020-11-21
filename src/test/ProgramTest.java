@@ -177,6 +177,36 @@ public class ProgramTest {
 					break;
 					
 				case 4:
+					System.out.println("=== Qual cadastro deseja deletar ===");
+					System.out.println("1) Funcionario");
+					System.out.println("2) Cliente");
+					System.out.println("3) Fornecedor");
+					System.out.println("4) Item em estoque");
+					System.out.println("5) Nota fiscal");
+					System.out.println("Digite sua opção: ");
+					int option4 = teclado.nextInt();
+					
+					if(option4 == 1) {
+						System.out.println("Qual funcionario deseja deletar, digite o id do mesmo: ");
+						int idDesejado = teclado.nextInt();
+						
+						try {
+							funcionario.deletarCadastro(idDesejado);
+						}catch (Exception e) {
+							System.out.println(e);
+						}
+						
+					}else if(option4 == 2) {
+						
+					}else if(option4 == 3) {
+						
+					}else if(option4 == 4) {
+						
+					}else if(option4 == 5) {
+						
+					}else {
+						System.out.println("Opção digita inválida");
+					}
 					break;
 				
 				case 5:

@@ -16,7 +16,7 @@ public class Funcionario extends Pessoa{
 	private static ArrayList<Funcionario> dadosFuncionarios = new ArrayList<Funcionario>();
 
 	//Constructors		
-	public Funcionario(String nome, Telefone telefone, Endereco endereco,  int id_Funcionario, String cargo, StatusFuncionario status, NivelDeAcesso nivelDeAcesso, String login, String senha) {
+	public Funcionario(String nome, Telefone telefone, Endereco endereco, int id_Funcionario, String cargo, StatusFuncionario status, NivelDeAcesso nivelDeAcesso, String login, String senha) {
 		super(nome, telefone, endereco);
 		this.id_Funcionario = id_Funcionario;
 		this.cargo = cargo;
@@ -71,18 +71,26 @@ public class Funcionario extends Pessoa{
 	
 	public void visualizarCadastro(int idDesejado) {
 		for(Funcionario fun: dadosFuncionarios) {
-			if(getId_Funcionario() == idDesejado) {
+			if(fun.getId_Funcionario() == idDesejado) {
 				System.out.println(fun.toString());
 			}
 		}
 	}
 	
-	public void atualizarCadastro() {
-		
+	public void atualizarCadastro(Funcionario funcionario) {
+		for (Funcionario fun : dadosFuncionarios) {
+			if (fun.getId_Funcionario() == funcionario.getId_Funcionario()) {
+				dadosFuncionarios.set(dadosFuncionarios.indexOf(fun), funcionario);
+			}
+		}
 	}
 	
-	public void deletarCadastro() {
-		
+	public void deletarCadastro(int id) {
+		for (Funcionario funcionario : dadosFuncionarios) {
+            if (funcionario.getId_Funcionario() == id) {
+                dadosFuncionarios.remove(funcionario);
+            }
+        }
 	}
 
 	@Override
