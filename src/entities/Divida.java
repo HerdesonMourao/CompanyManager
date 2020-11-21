@@ -36,6 +36,22 @@ public class Divida {
 	}
 
 	//Methods
+	public void realizarCadastro(Fornecedor fornecedor) {
+			
+	}
+		
+	public void visualizarCadastro(int idDesejado) {
+		
+	}
+		
+	public void atualizarCadastro() {
+			
+	}
+		
+	public void deletarCadastro() {
+			
+	}
+		
 	@Override
 	public String toString() {
 		return "Divida [valor= " + getValorDivida()

@@ -36,10 +36,4 @@ public class Pessoa {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	
-	//Methods
-	//public abstract void realizarCadastro();
-	//public abstract void visualizarCadastro();
-	//public abstract void atualizarCadastro();	
-	//public abstract void deletarCadastro();
 }

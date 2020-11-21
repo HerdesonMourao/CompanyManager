@@ -49,6 +49,22 @@ public class ItemNotaFiscal {
 	}
 
 	//Methods
+	public void realizarCadastro(Fornecedor fornecedor) {
+			
+	}
+		
+	public void visualizarCadastro(int idDesejado) {
+		
+	}
+		
+	public void atualizarCadastro() {
+			
+	}
+		
+	public void deletarCadastro() {
+			
+	}
+		
 	@Override
 	public String toString() {
 		return "ItemNotaFiscal [Codigo produto= " + getCodigoProduto()
